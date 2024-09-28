@@ -1,0 +1,123 @@
+# Walmart Sales Data Analysis
+
+## Project Overview
+This project aims to explore Walmart's sales data to understand top-performing branches and products, identify sales trends, and analyze customer behavior. The goal is to determine how sales strategies can be improved and optimized. The dataset includes historical sales data from 45 Walmart stores located in various regions, with selected holiday markdown events included, complicating sales predictions.
+
+## Purposes of the Project
+The primary aim of this project is to gain insights into Walmart's sales data, focusing on the different factors that affect sales across various branches.
+
+## Analysis List
+### Product Analysis
+Conduct an analysis to identify different product lines, evaluate which are performing best, and determine which need improvement.
+
+### Sales Analysis
+This analysis will explore product sales trends, helping to measure the effectiveness of current sales strategies and suggesting modifications for increased sales.
+
+### Customer Analysis
+Uncover different customer segments, purchasing trends, and the profitability of each segment.
+
+## Approach Used
+- 1. **Data Wrangling**: The first step involved inspecting the data to detect NULL and missing values, ensuring a clean dataset for analysis.
+  **Database Management**: Built a database and created tables.
+  **Data Insertion**: Inserted the data while setting fields to NOT NULL to filter out any null values.
+- 2. **Feature Engineering:** This will help use generate some new columns from existing ones.
+
+> 1. Add a new column named `time_of_day` to give insight of sales in the Morning, Afternoon and Evening. This will help answer the question on which part of the day most sales are made.
+
+> 2. Add a new column named `day_name` that contains the extracted days of the week on which the given transaction took place (Mon, Tue, Wed, Thur, Fri). This will help answer the question on which week of the day each branch is busiest.
+
+> 3. Add a new column named `month_name` that contains the extracted months of the year on which the given transaction took place (Jan, Feb, Mar). Help determine which month of the year has the most sales and profit.
+- 3. **Exploratory Data Analysis (EDA)**: Conducted to address the project’s key questions.
+
+## Technologies Used
+The primary technology used is **SQL**. Here are the specific SQL-related aspects:
+- **Database Management**: Creating and managing a database (e.g., `CREATE DATABASE walmartSales;`).
+- **Table Creation**: Defining the schema for the sales data, including columns and data types (e.g., `CREATE TABLE sales (...);`).
+- **Data Insertion**: Inserting the sales data into the created tables using `INSERT` statements.
+- **Data Queries**: Running various `SELECT` queries to retrieve insights from the data, such as:
+  - Unique cities
+  - Total revenue by month
+  - Most common product lines
+  - Customer segmentation
+- **Data Manipulation**: Using SQL functions to aggregate data, calculate totals, and derive metrics (e.g., `SUM()`, `AVG()`, `GROUP BY`).
+- **Joins**: Using `JOIN` statements to combine data from multiple tables for deeper analysis.
+- **Stored Procedures/Functions**: Writing procedures or functions to automate repetitive tasks or complex calculations.
+
+Overall, SQL serves as the sole technology for managing, analyzing, and deriving insights from the Walmart sales data.
+
+## The Dataset
+The dataset, obtained from the [here](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting), contains sales transactions from three branches located in Mandalay, Yangon, and Naypyitaw. It includes 17 columns and 1,000 rows:
+
+| Column                    | Description                                | Data Type      |
+|---------------------------|--------------------------------------------|-----------------|
+| invoice_id                | Invoice of the sales made                  | VARCHAR(30)     |
+| branch                    | Branch at which sales were made            | VARCHAR(5)      |
+| city                      | Location of the branch                     | VARCHAR(30)     |
+| customer_type             | Type of the customer                       | VARCHAR(30)     |
+| gender                    | Gender of the customer making purchase     | VARCHAR(10)     |
+| product_line              | Product line of the sold product           | VARCHAR(100)    |
+| unit_price                | Price of each product                      | DECIMAL(10, 2)  |
+| quantity                  | Amount of the product sold                 | INT             |
+| VAT                       | Tax on the purchase                        | FLOAT(6, 4)     |
+| total                     | Total cost of the purchase                 | DECIMAL(10, 2)  |
+| date                      | Date of purchase                           | DATE            |
+| time                      | Time of purchase                           | TIMESTAMP       |
+| payment_method            | Amount paid                                | DECIMAL(10, 2)  |
+| cogs                      | Cost of Goods Sold                         | DECIMAL(10, 2)  |
+| gross_margin_percentage    | Gross margin percentage                    | FLOAT(11, 9)    |
+| gross_income              | Gross Income                               | DECIMAL(10, 2)  |
+| rating                    | Customer rating                            | FLOAT(2, 1)     |
+
+## Business Questions to Answer
+### General Questions
+1. How many unique cities does the data have?
+2. In which city is each branch located?
+
+### Product Questions
+1. How many unique product lines are there?
+2. What is the most common payment method?
+3. What is the best-selling product line?
+4. What is the total revenue by month?
+5. Which month had the largest COGS?
+6. Which product line generated the most revenue?
+7. What city had the largest revenue?
+8. Which product line had the highest VAT?
+9. How can we categorize each product line as "Good" or "Bad" based on average sales?
+10. Which branch sold more products than the average?
+11. What is the most common product line by gender?
+12. What is the average rating for each product line?
+
+### Sales Questions
+1. How many sales were made at different times of the day on weekdays?
+2. Which customer type generates the most revenue?
+3. Which city has the highest VAT percentage?
+4. Which customer type pays the most VAT?
+
+### Customer Questions
+1. How many unique customer types are there?
+2. How many unique payment methods are present?
+3. What is the most common customer type?
+4. Which customer type has the highest purchase volume?
+5. What is the gender distribution of customers?
+6. What is the gender distribution by branch?
+7. At what time do customers give the highest ratings?
+8. Which day of the week has the best average ratings?
+9. Which day of the week has the highest ratings per branch?
+
+## Revenue and Profit Calculations
+- **COGS** = unit_price × quantity
+- **VAT** = 5% × COGS
+- **Total (Gross Sales)** = VAT + COGS
+- **Gross Profit (Gross Income)** = Total (Gross Sales) - COGS
+- **Gross Margin** = (Gross Income / Total Revenue) × 100
+
+### Example Calculation
+**Data Given**:
+- Unit Price = 45.79
+- Quantity = 7
+
+**Calculations**:
+- COGS = 45.79 × 7 = 320.53
+- VAT = 5% × COGS = 5% × 320.53 = 16.03
+- Total = VAT + COGS = 16.03 + 320.53 = 336.56
+- Gross Margin Percentage = (Gross Income / Total Revenue) = (16.03 / 336.56) ≈ 4.76%

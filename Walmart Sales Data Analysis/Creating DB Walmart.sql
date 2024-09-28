@@ -1,4 +1,4 @@
--- Step1: Creating Database and its products for Walmartsales
+-- Step1: Creating Database and its products for Walmartsales Database
 -- Create database
 CREATE DATABASE IF NOT EXISTS walmartSales;
 use walmart;
@@ -23,7 +23,27 @@ CREATE TABLE IF NOT EXISTS sales(
     gross_income DECIMAL(12, 4),
     rating FLOAT(2, 1)
 );
--- Step2: Loading data fromsource dataset
+
+-- Step2: Loading data fromsource dataset into Mysql server
+-- Importing CSV Files in MySQL Workbench
+-- Open MySQL Workbench and connect to your database.
+
+-- Right-click on the target database in the Navigator panel on the left.
+
+-- Select "Table Data Import Wizard" from the context menu.
+
+-- Locate your CSV file:
+
+-- Click "Browse" to select your CSV file.
+-- Select the target table:
+
+-- Choose an existing table or create a new one as needed.
+-- Map the columns (if required):
+
+-- Ensure the CSV columns align with the table columns. Make adjustments if necessary.
+-- Finish the import:
+
+Review your settings, click "Next", then "Finish" to complete the import process.
 -- Step3: Data cleaning
 SELECT
 	*
@@ -80,7 +100,7 @@ UPDATE sales
 SET month_name = MONTHNAME(date);
 
 
--- ---------------------------- Generic ------------------------------
+-- ---------------------------- General Questions ------------------------------
 
 -- How many unique cities does the data have?
 SELECT 
