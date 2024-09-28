@@ -49,7 +49,7 @@ SELECT
 	*
 FROM sales;
 
-
+-- Adding a column to extract time of the day
 -- Add the time_of_day column
 SELECT
 	time,
@@ -66,6 +66,7 @@ ALTER TABLE sales ADD COLUMN time_of_day VARCHAR(20);
 -- For this to work turn off safe mode for update
 -- Edit > Preferences > SQL Edito > scroll down and toggle safe mode
 -- Reconnect to MySQL: Query > Reconnect to server
+
 UPDATE sales
 SET time_of_day = (
 	CASE

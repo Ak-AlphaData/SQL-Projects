@@ -5,7 +5,6 @@ SELECT
 	DISTINCT product_line
 FROM sales;
 
-
 -- 2.What is the most common payment method
 SELECT
 	payment,
@@ -30,7 +29,6 @@ FROM sales
 GROUP BY month_name 
 ORDER BY total_revenue;
 
-
 -- 5.What month had the largest COGS?
 SELECT
 	month_name AS month,
@@ -38,7 +36,6 @@ SELECT
 FROM sales
 GROUP BY month_name 
 ORDER BY cogs desc;
-
 
 -- 6.What product line had the largest revenue?
 SELECT
@@ -57,7 +54,6 @@ FROM sales
 GROUP BY city, branch 
 ORDER BY total_revenue desc;
 
-
 -- 8.What product line had the largest VAT?
 SELECT
 	product_line,
@@ -65,7 +61,6 @@ SELECT
 FROM sales
 GROUP BY product_line
 ORDER BY avg_tax DESC;
-
 
 -- 9.Fetch each product line and add a column to those product line showing "Good", "Bad". Good if its greater than average sales
 SELECT 
@@ -81,7 +76,6 @@ SELECT
 FROM sales
 GROUP BY product_line;
 
-
 -- 10.Which branch sold more products than average product sold?
 SELECT 
 	branch, 
@@ -89,7 +83,6 @@ SELECT
 FROM sales
 GROUP BY branch
 HAVING SUM(quantity) > (SELECT AVG(quantity) FROM sales);
-
 
 -- 11.What is the most common product line by gender
 SELECT
