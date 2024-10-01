@@ -101,7 +101,7 @@ SET month_name = MONTHNAME(date);
 -- How many unique cities does the data have?
 SELECT 
 	DISTINCT city
-FROM sales;S
+FROM sales;
 
 -- In which city is each branch?
 SELECT 

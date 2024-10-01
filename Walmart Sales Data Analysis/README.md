@@ -32,6 +32,8 @@ Uncover different customer segments, purchasing trends, and the profitability of
 ## Technologies Used
 The primary technology used is **SQL**. Here are the specific SQL-related aspects:
 - **Database Management**: Creating and managing a database (e.g., `CREATE DATABASE walmartSales;`).
+- The Databse is created [Create_DB](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Creating%20DB%20Walmart.sql)
+
 - **Table Creation**: Defining the schema for the sales data, including columns and data types (e.g., `CREATE TABLE sales (...);`).
 - **Data Insertion**: Inserting the sales data into the created tables using `INSERT` statements.
 - **Data Queries**: Running various `SELECT` queries to retrieve insights from the data, such as:
@@ -48,7 +50,7 @@ Overall, SQL serves as the sole technology for managing, analyzing, and deriving
 ## The Dataset
 The dataset, obtained from the [here](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting), contains sales transactions from three branches located in Mandalay, Yangon, and Naypyitaw. It includes 17 columns and 1,000 rows:
 
-| Column                    | Description                                | Data Type      |
+| Column                    | Description                                | Data Type       |
 |---------------------------|--------------------------------------------|-----------------|
 | invoice_id                | Invoice of the sales made                  | VARCHAR(30)     |
 | branch                    | Branch at which sales were made            | VARCHAR(5)      |
@@ -64,7 +66,7 @@ The dataset, obtained from the [here](https://www.kaggle.com/c/walmart-recruitin
 | time                      | Time of purchase                           | TIMESTAMP       |
 | payment_method            | Amount paid                                | DECIMAL(10, 2)  |
 | cogs                      | Cost of Goods Sold                         | DECIMAL(10, 2)  |
-| gross_margin_percentage    | Gross margin percentage                    | FLOAT(11, 9)    |
+| gross_margin_percentage   | Gross margin percentage                    | FLOAT(11, 9)    |
 | gross_income              | Gross Income                               | DECIMAL(10, 2)  |
 | rating                    | Customer rating                            | FLOAT(2, 1)     |
 
@@ -86,12 +88,31 @@ The dataset, obtained from the [here](https://www.kaggle.com/c/walmart-recruitin
 10. Which branch sold more products than the average?
 11. What is the most common product line by gender?
 12. What is the average rating for each product line?
+- [Products](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Products.sql)
 
 ### Sales Questions
 1. How many sales were made at different times of the day on weekdays?
 2. Which customer type generates the most revenue?
 3. Which city has the highest VAT percentage?
 4. Which customer type pays the most VAT?
+[Sales](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Sales.sql)
+## Dashboard Preview
+( )
+### Insights
+- The highest sales occur in the afternoons, indicating a peak purchasing time for customers.
+- Saturdays are the top sales day, contributing significantly to overall sales figures.
+- January shows strong sales performance, likely due to post-holiday shopping behavior.
+- Sales in Naypyitaw City are notably high, making it a key market for targeted efforts.
+
+### Recommended Strategy for Enhanced Sales
+**Target Audience:** Focus on afternoon shoppers, particularly on Saturdays and during January. Emphasize outreach in C City to capitalize on local demand.
+
+**Marketing Strategy:**
+- Implement afternoon promotions and exclusive Saturday deals to attract customers during peak hours.
+- Create targeted marketing campaigns in January that highlight post-holiday offers.
+- Utilize local advertising and community events in C City to strengthen brand presence and drive traffic.
+- By aligning marketing efforts with these insights, sales can be significantly boosted by leveraging peak purchasing behaviors and local market strengths.
+
 
 ### Customer Questions
 1. How many unique customer types are there?
@@ -103,6 +124,8 @@ The dataset, obtained from the [here](https://www.kaggle.com/c/walmart-recruitin
 7. At what time do customers give the highest ratings?
 8. Which day of the week has the best average ratings?
 9. Which day of the week has the highest ratings per branch?
+[Customers](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Customers.sql)
+
 
 ## Revenue and Profit Calculations
 - **COGS** = unit_price × quantity
@@ -121,3 +144,7 @@ The dataset, obtained from the [here](https://www.kaggle.com/c/walmart-recruitin
 - VAT = 5% × COGS = 5% × 320.53 = 16.03
 - Total = VAT + COGS = 16.03 + 320.53 = 336.56
 - Gross Margin Percentage = (Gross Income / Total Revenue) = (16.03 / 336.56) ≈ 4.76%
+
+
+## Code
+For all SQL Queries, check the [SQL_queries.sql](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/SQL_queries.sql) file
