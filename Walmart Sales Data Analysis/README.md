@@ -17,13 +17,14 @@ This analysis will explore product sales trends, helping to measure the effectiv
 Uncover different customer segments, purchasing trends, and the profitability of each segment.
 
 ## Approach Used
-- 1. - **Data Wrangling**: The first step involved inspecting the data to detect NULL and missing values, ensuring a clean dataset for analysis.
-  - **Database Management**: Built a database and created tables.
-  - **Data Insertion**: Inserted the data while setting fields to NOT NULL to filter out any null values.
+- 1. **Data Wrangling and Management Steps:**
+  - **Data Inspection:** Inspected the dataset to identify NULL and missing values for a clean analysis.
+  - **Database Management:** Built a database and created tables with appropriate data types.
+  - **Data Insertion:** Inserted the cleaned data into the database, ensuring all fields were set to NOT NULL.
 - 2. **Feature Engineering:** This will help use generate some new columns from existing ones.
-> 1. Add a new column named `time_of_day` to give insight of sales in the Morning, Afternoon and Evening. This will help answer the question on which part of the day most sales are made.
-> 2. Add a new column named `day_name` that contains the extracted days of the week on which the given transaction took place (Mon, Tue, Wed, Thur, Fri). This will help answer the question on which week of the day each branch is busiest.
-> 3. Add a new column named `month_name` that contains the extracted months of the year on which the given transaction took place (Jan, Feb, Mar). Help determine which month of the year has the most sales and profit.
+   1. Add a new column named `time_of_day` to give insight of sales in the Morning, Afternoon and Evening. This will help answer the question on which part of the day most sales are made.
+   2. Add a new column named `day_name` that contains the extracted days of the week on which the given transaction took place (Mon, Tue, Wed, Thur, Fri). This will help answer the question on which week of the day each branch is busiest.
+   3. Add a new column named `month_name` that contains the extracted months of the year on which the given transaction took place (Jan, Feb, Mar). Help determine which month of the year has the most sales and profit.
 - 3. **Exploratory Data Analysis (EDA)**: Conducted to address the project’s key questions.
 
 ## Technologies Used
@@ -191,3 +192,30 @@ Implementing these strategies can effectively enhance customer engagement and dr
 
 ## Code
 For all SQL Queries, check the [SQL_queries.sql](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/SQL_queries.sql) file
+
+## Overall Insights for Walmart Sales
+- **Top Sellers:** Electronic accessories are frequently purchased, especially by non-members. Food and beverages receive high customer ratings, indicating strong satisfaction.
+- **Seasonal Trends:**
+  - **January:** High sales of sports products, likely due to post-holiday shopping.
+  - **February:** Strong demand for food and beverages, particularly around Valentine's Day.
+  - **March:** Increased purchases of home and lifestyle items, signaling spring cleaning.
+- **Demographics:** Females outnumber males in purchases, spending more on food and beverages, while males primarily buy health and beauty products.
+- **Membership Trends:** Members generally buy more food and beverages; non-members focus on electronic accessories.
+- **Peak Purchasing Times:** Highest sales occur in the afternoons, with Saturdays as the top sales day.
+- **Payment Methods:** Preferred methods are Cash (35%), E-Wallet (34%), and Credit Card (31%), indicating a need for payment-focused incentives.
+
+### Recommended Strategy for Enhanced Sales
+- **Target Audience:** Focus on non-members purchasing electronic accessories, afternoon shoppers, and females for food and beverages.
+
+**Marketing Strategy:**
+- **Membership Promotions:** Convert non-members through exclusive offers on high-quantity products.
+- **Seasonal Campaigns:**
+  - **January:** Promote sports products.
+  - **February:** Highlight food and beverage bundles for Valentine’s Day.
+  - **March:** Offer multi-buy discounts on home and lifestyle products.
+- **Gender-Specific Marketing:** Tailor campaigns for females around food and beverages, and for males focusing on health and beauty.
+- **Cross-Selling Strategies:** Recommend complementary products at checkout.
+- **Afternoon Promotions:** Implement deals during peak hours and exclusive Saturday sales.
+- **Payment Incentives:** Encourage cash and e-wallet usage with discounts or loyalty points.
+
+Implementing these strategies will enhance customer engagement and drive significant sales growth for Walmart.
