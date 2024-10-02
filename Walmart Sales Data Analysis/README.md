@@ -17,15 +17,12 @@ This analysis will explore product sales trends, helping to measure the effectiv
 Uncover different customer segments, purchasing trends, and the profitability of each segment.
 
 ## Approach Used
-- 1. **Data Wrangling**: The first step involved inspecting the data to detect NULL and missing values, ensuring a clean dataset for analysis.
-  **Database Management**: Built a database and created tables.
-  **Data Insertion**: Inserted the data while setting fields to NOT NULL to filter out any null values.
+- 1. - **Data Wrangling**: The first step involved inspecting the data to detect NULL and missing values, ensuring a clean dataset for analysis.
+  - **Database Management**: Built a database and created tables.
+  - **Data Insertion**: Inserted the data while setting fields to NOT NULL to filter out any null values.
 - 2. **Feature Engineering:** This will help use generate some new columns from existing ones.
-
 > 1. Add a new column named `time_of_day` to give insight of sales in the Morning, Afternoon and Evening. This will help answer the question on which part of the day most sales are made.
-
 > 2. Add a new column named `day_name` that contains the extracted days of the week on which the given transaction took place (Mon, Tue, Wed, Thur, Fri). This will help answer the question on which week of the day each branch is busiest.
-
 > 3. Add a new column named `month_name` that contains the extracted months of the year on which the given transaction took place (Jan, Feb, Mar). Help determine which month of the year has the most sales and profit.
 - 3. **Exploratory Data Analysis (EDA)**: Conducted to address the project’s key questions.
 
@@ -90,14 +87,38 @@ The dataset, obtained from the [here](https://www.kaggle.com/c/walmart-recruitin
 12. What is the average rating for each product line?
 - [Products](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Products.sql)
 
-### Sales Questions
+## Dashboard Preview
+
+### Insights
+- **Top Sellers:** Electronic accessories are the most frequently purchased products, particularly by non-members.
+- **Seasonal Trends:** High purchase volumes of sports products in January, food and beverages in February, and home and lifestyle items in March.
+- **Demographics:** Females buy more than males, with a strong preference for fashion and accessories; males predominantly purchase health and beauty items.
+- **Membership Trends:** Members tend to buy food and beverages in greater quantities, while non-members focus on electronic accessories.
+
+### Recommended Strategy for Enhanced Sales
+**Target Audience:** Focus on non-members purchasing electronic accessories and females for fashion and accessories.
+
+**Marketing Strategy:**
+- **Membership Promotions:** Encourage non-members to become members through exclusive offers on high-quantity products.
+- **Seasonal Campaigns:**
+  - **January:** Promote high-volume sales of sports products.
+  - **February:** Emphasize bulk purchasing options for food and beverages.
+  - **March:** Highlight home and lifestyle products with multi-buy discounts.
+- **Gender-Specific Marketing:** Tailor campaigns for females focusing on fashion and accessories, and for males on health and beauty.
+- **Cross-Selling:** Recommend complementary products to increase purchase quantities.
+
+By aligning strategies with these insights, you can effectively boost the quantity of products sold.
+
+## Sales Questions
 1. How many sales were made at different times of the day on weekdays?
 2. Which customer type generates the most revenue?
 3. Which city has the highest VAT percentage?
 4. Which customer type pays the most VAT?
-[Sales](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Sales.sql)
+- [Sales](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Sales.sql)
+
 ## Dashboard Preview
-( )
+(https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Sales_Dashboard.jpg )
+
 ### Insights
 - The highest sales occur in the afternoons, indicating a peak purchasing time for customers.
 - Saturdays are the top sales day, contributing significantly to overall sales figures.
@@ -111,7 +132,8 @@ The dataset, obtained from the [here](https://www.kaggle.com/c/walmart-recruitin
 - Implement afternoon promotions and exclusive Saturday deals to attract customers during peak hours.
 - Create targeted marketing campaigns in January that highlight post-holiday offers.
 - Utilize local advertising and community events in C City to strengthen brand presence and drive traffic.
-- By aligning marketing efforts with these insights, sales can be significantly boosted by leveraging peak purchasing behaviors and local market strengths.
+
+By aligning marketing efforts with these insights, sales can be significantly boosted by leveraging peak purchasing behaviors and local market strengths.
 
 
 ### Customer Questions
@@ -124,7 +146,28 @@ The dataset, obtained from the [here](https://www.kaggle.com/c/walmart-recruitin
 7. At what time do customers give the highest ratings?
 8. Which day of the week has the best average ratings?
 9. Which day of the week has the highest ratings per branch?
-[Customers](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Customers.sql)
+- [Customers](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Customers.sql)
+
+## Dashboard Preview
+
+### Insights
+- **Customer Ratings:** Food and beverages receive the highest ratings, indicating strong customer satisfaction in this category.
+- **Payment Methods:** Payment distribution is as follows: Cash (35%), E-Wallet (34%), Credit Card (31%).
+- **Gender Distribution:** Females outnumber males in purchases and spend more on food and beverages, while males primarily spend on health and beauty products.
+- **Spending Patterns:** Members show a preference for food and beverages, whereas non-members primarily purchase electronic accessories.
+
+### Recommended Strategy for Enhanced Sales
+**Target Audience:** Focus on female customers for food and beverages and engage male customers for health and beauty products.
+
+### Marketing Strategy:
+
+- **Highlight Food and Beverages:** Leverage high ratings to promote food and beverage products through targeted campaigns.
+- **Payment Promotions:** Encourage the use of cash and e-wallets with incentives or discounts, considering their popularity.
+- **Gender-Specific Campaigns:** Tailor marketing efforts for females around food and beverages and for males around health and beauty.
+- **Membership Benefits:** Promote member-exclusive offers on food and beverages to increase loyalty and repeat purchases.
+- **Non-Member Conversion:** Create campaigns to convert non-members purchasing electronic accessories into members by highlighting the benefits of membership, particularly in food and beverages.
+
+Implementing these strategies can effectively enhance customer engagement and drive sales growth.
 
 
 ## Revenue and Profit Calculations
