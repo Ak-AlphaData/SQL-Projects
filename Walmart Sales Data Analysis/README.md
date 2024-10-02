@@ -125,16 +125,16 @@ By aligning strategies with these insights, you can effectively boost the quanti
 - Saturdays are the top sales day, contributing significantly to overall sales figures.
 - January shows strong sales performance, likely due to post-holiday shopping behavior.
 - Sales in Naypyitaw City are notably high, making it a key market for targeted efforts.
+- Sales Trends Across Dates: Analysis reveals patterns in daily sales, helping to identify fluctuations and seasonal peaks.
 
 ### Recommended Strategy for Enhanced Sales
-**Target Audience:** Focus on afternoon shoppers, particularly on Saturdays and during January. Emphasize outreach in C City to capitalize on local demand.
+**Target Audience:** Focus on afternoon shoppers, particularly on Saturdays and during January. Emphasize outreach in Naypyitaw City to capitalize on local demand.
 
 **Marketing Strategy:**
 - Implement afternoon promotions and exclusive Saturday deals to attract customers during peak hours.
 - Create targeted marketing campaigns in January that highlight post-holiday offers.
-- Utilize local advertising and community events in C City to strengthen brand presence and drive traffic.
-
-By aligning marketing efforts with these insights, sales can be significantly boosted by leveraging peak purchasing behaviors and local market strengths.
+- Utilize local advertising and community events in Naypyitaw City to strengthen brand presence and drive traffic.
+- By aligning marketing efforts with these insights, sales can be significantly boosted by leveraging peak purchasing behaviors and local market strengths.
 
 
 ### Customer Questions
@@ -202,6 +202,7 @@ For all SQL Queries, check the [SQL_queries.sql](https://github.com/Ak-AlphaData
 - **Demographics:** Females outnumber males in purchases, spending more on food and beverages, while males primarily buy health and beauty products.
 - **Membership Trends:** Members generally buy more food and beverages; non-members focus on electronic accessories.
 - **Peak Purchasing Times:** Highest sales occur in the afternoons, with Saturdays as the top sales day.
+- **Sales Trends Across Dates:** Analysis reveals patterns in daily sales, helping to identify fluctuations and seasonal peaks.
 - **Payment Methods:** Preferred methods are Cash (35%), E-Wallet (34%), and Credit Card (31%), indicating a need for payment-focused incentives.
 
 ### Recommended Strategy for Enhanced Sales
