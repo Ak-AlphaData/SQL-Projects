@@ -88,8 +88,8 @@ The dataset, obtained from the [here](https://www.kaggle.com/c/walmart-recruitin
 - [Products](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Products.sql)
 
 ## Dashboard Preview
-
-### Insights
+![image](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Products_Dashboard.jpg)
+### Insightsgit
 - **Top Sellers:** Electronic accessories are the most frequently purchased products, particularly by non-members.
 - **Seasonal Trends:** High purchase volumes of sports products in January, food and beverages in February, and home and lifestyle items in March.
 - **Demographics:** Females buy more than males, with a strong preference for fashion and accessories; males predominantly purchase health and beauty items.
@@ -117,7 +117,7 @@ By aligning strategies with these insights, you can effectively boost the quanti
 - [Sales](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Sales.sql)
 
 ## Dashboard Preview
-(https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Sales_Dashboard.jpg )
+![image](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Sales_Dashboard.jpg )
 
 ### Insights
 - The highest sales occur in the afternoons, indicating a peak purchasing time for customers.
@@ -149,7 +149,7 @@ By aligning marketing efforts with these insights, sales can be significantly bo
 - [Customers](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Customers.sql)
 
 ## Dashboard Preview
-
+![image](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Customers_Dashboard.jpg)
 ### Insights
 - **Customer Ratings:** Food and beverages receive the highest ratings, indicating strong customer satisfaction in this category.
 - **Payment Methods:** Payment distribution is as follows: Cash (35%), E-Wallet (34%), Credit Card (31%).
