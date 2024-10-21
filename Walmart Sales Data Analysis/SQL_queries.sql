@@ -112,105 +112,130 @@ FROM sales;
 
 -- ---------------------------- Product -------------------------------
 
--- 1.How many unique product lines does the data have?
+-- 1. How many unique product lines does the data have?
 SELECT
-	DISTINCT product_line
+    DISTINCT product_line
 FROM sales;
 
--- 2.What is the most common payment method
+-- 2. What is the most common payment method?
 SELECT
-	payment,
+    payment,
     count(payment) as payment_method
 FROM sales
 GROUP BY payment
 ORDER BY count(payment) DESC;
 
---3.What is the most selling product line
+-- 3. What is the most selling product line?
 SELECT
-	SUM(quantity) as qty,
+    SUM(quantity) as qty,
     product_line
 FROM sales
 GROUP BY product_line
 ORDER BY qty DESC;
 
--- 4.What is the total revenue by month
+-- 4. What is the total revenue by month?
 SELECT
-	month_name AS month,
-	SUM(total) AS total_revenue
+    month_name AS month,
+    SUM(total) AS total_revenue
 FROM sales
 GROUP BY month_name 
 ORDER BY total_revenue;
 
--- 5.What month had the largest COGS?
+-- 5. What month had the largest COGS?
 SELECT
-	month_name AS month,
-	SUM(cogs) AS cogs
+    month_name AS month,
+    SUM(cogs) AS cogs
 FROM sales
 GROUP BY month_name 
 ORDER BY cogs desc;
 
--- 6.What product line had the largest revenue?
+-- 6. What product line had the largest revenue?
 SELECT
-	product_line,
-	SUM(total) as total_revenue
+    product_line,
+    SUM(total) as total_revenue
 FROM sales
 GROUP BY product_line
 ORDER BY total_revenue DESC;
 
--- 7.What is the city with the largest revenue?
+-- 7. What is the city with the largest revenue?
 SELECT
-	branch,
-	city,
-	SUM(total) AS total_revenue
+    branch,
+    city,
+    SUM(total) AS total_revenue
 FROM sales
 GROUP BY city, branch 
 ORDER BY total_revenue desc;
 
--- 8.What product line had the largest VAT?
+-- 8. What product line had the largest VAT?
 SELECT
-	product_line,
-	AVG(tax_pct) as avg_tax
+    product_line,
+    AVG(tax_pct) as avg_tax
 FROM sales
 GROUP BY product_line
 ORDER BY avg_tax DESC;
 
--- 9.Fetch each product line and add a column to those product line showing "Good", "Bad". Good if its greater than average sales
+-- 9. Fetch each product line and add a column to those product line showing "Good", "Bad". Good if its greater than average sales
 SELECT 
-	AVG(quantity) AS avg_qnty
+    AVG(quantity) AS avg_qnty
 FROM sales;
 
 SELECT
-	product_line,
-	CASE
-		WHEN AVG(quantity) > 6 THEN "Good"
+    product_line,
+    CASE
+        WHEN AVG(quantity) > 6 THEN "Good"
         ELSE "Bad"
     END AS remark
 FROM sales
 GROUP BY product_line;
+-- Here this takes time of 0.016 sec
 
--- 10.Which branch sold more products than average product sold?
+-- OR 
+
+WITH avg_sales AS (
+    SELECT AVG(quantity) AS avg_quantity
+    FROM sales
+)
+SELECT product_line,
+       CASE
+           WHEN SUM(quantity) > (SELECT avg_quantity FROM avg_sales) THEN 'Good'
+           ELSE 'Bad'
+       END AS remark
+FROM sales
+GROUP BY product_line;
+-- Here using CTE can reduce time of retriving data as we can see it takes 0.000 sec 
+
+-- 10. Which branch sold more products than average product sold?
 SELECT 
-	branch, 
+    branch, 
     SUM(quantity) AS qnty
 FROM sales
 GROUP BY branch
-HAVING SUM(quantity) > (SELECT AVG(quantity) FROM sales);
+HAVING SUM(quantity) > (SELECT AVG(quantity) 
+                        FROM sales);
 
--- 11.What is the most common product line by gender
+-- 11. What is the most common product line by gender?
 SELECT
-	gender,
+    gender,
     product_line,
     COUNT(gender) AS total_cnt
 FROM sales
 GROUP BY gender, product_line
 ORDER BY total_cnt DESC;
 
--- 12.What is the average rating of each product line
+-- 12. What is the average rating of each product line?
 SELECT
-	ROUND(AVG(rating), 2) as avg_rating,
+    ROUND(AVG(rating), 2) as avg_rating,
     product_line
 FROM sales
 GROUP BY product_line
+ORDER BY avg_rating DESC;
+
+-- 13. Which product line has the highest customer rating on average, considering only those with at least 10 sales?
+SELECT product_line,
+       ROUND(AVG(rating), 2) AS avg_rating
+FROM sales
+GROUP BY product_line
+HAVING COUNT(quantity) >= 10  -- Ensure at least 10 sales
 ORDER BY avg_rating DESC;
 
 
@@ -221,12 +246,12 @@ SELECT
 	DISTINCT customer_type
 FROM sales;
 
--- How many unique payment methods does the data have?
+-- 2.How many unique payment methods does the data have?
 SELECT
 	DISTINCT payment
 FROM sales;
 
--- 2.What is the most common customer type?
+-- 3.What is the most common customer type?
 SELECT
 	customer_type,
 	count(*) as count
@@ -234,14 +259,14 @@ FROM sales
 GROUP BY customer_type
 ORDER BY count DESC;
 
--- 3.Which customer type buys the most?
+-- 4.Which customer type buys the most?
 SELECT
 	customer_type,
     COUNT(*)
 FROM sales
 GROUP BY customer_type;
 
--- 4.What is the gender of most of the customers?
+-- 5.What is the gender of most of the customers?
 SELECT
 	gender,
 	COUNT(*) as gender_cnt
@@ -249,7 +274,7 @@ FROM sales
 GROUP BY gender
 ORDER BY gender_cnt DESC;
 
--- 5.What is the gender distribution per branch?
+-- 6.What is the gender distribution per branch?
 SELECT
 	gender,
 	COUNT(*) as gender_cnt
@@ -259,7 +284,7 @@ GROUP BY gender
 ORDER BY gender_cnt DESC;
 -- Gender per branch is more or less the same hence, I don't think has an effect of the sales per branch and other factors.
 
--- 6.Which time of the day do customers give most ratings?
+-- 7.Which time of the day do customers give most ratings?
 SELECT
 	time_of_day,
 	AVG(rating) AS avg_rating
@@ -268,7 +293,7 @@ GROUP BY time_of_day
 ORDER BY avg_rating DESC;
 -- Looks like time of the day does not really affect the rating, its more or less the same rating each time of the day.alter
 
--- 7.Which time of the day do customers give most ratings per branch?
+-- 8.Which time of the day do customers give most ratings per branch?
 SELECT
 	time_of_day,
 	AVG(rating) AS avg_rating,
@@ -279,7 +304,7 @@ GROUP BY time_of_day,branch
 ORDER BY avg_rating DESC;
 -- Branch A and C are doing well in ratings, branch B needs to do a little more to get better ratings.
 
--- 8.Which day fo the week has the best avg ratings?
+-- 9.Which day fo the week has the best avg ratings?
 SELECT
 	day_name,
 	AVG(rating) AS avg_rating
@@ -288,7 +313,7 @@ GROUP BY day_name
 ORDER BY avg_rating DESC;
 -- Mon, Tue and Friday are the top best days for good ratings why is that the case, how many sales are made on these days?
 
--- 9.Which day of the week has the best average ratings per branch?
+-- 10.Which day of the week has the best average ratings per branch?
 SELECT 
 	day_name,
 	COUNT(day_name) total_sales
@@ -297,6 +322,26 @@ WHERE branch = "C"
 GROUP BY day_name
 ORDER BY total_sales DESC;
 
+-- 11.How many sales were made on the best days for good ratings?
+WITH BestRatingDays AS (
+    SELECT day_name
+    FROM sales
+    GROUP BY day_name
+    HAVING AVG(rating) = (SELECT MAX(avg_rating)
+                          FROM (SELECT AVG(rating) AS avg_rating
+                                FROM sales
+                                GROUP BY day_name) AS avg_ratings)
+)
+
+SELECT day_name, COUNT(*) AS total_sales
+FROM sales
+WHERE day_name IN (SELECT day_name FROM BestRatingDays)
+GROUP BY day_name;
+
+
+-- COUNT(DISTINCT): To count unique customer types and payment methods.
+-- Common Table Expressions (CTEs): Used in query 11 for better readability and to avoid repeating logic.
+-- Subqueries: Used to find the maximum average rating in query 11.
 
 -- ---------------------------- Sales ---------------------------------
 

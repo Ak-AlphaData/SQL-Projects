@@ -39,7 +39,7 @@ The primary technology used is **SQL**. Here are the specific SQL-related aspect
   - Total revenue by month
   - Most common product lines
   - Customer segmentation
-- **Data Manipulation**: Using SQL functions to aggregate data, calculate totals, and derive metrics (e.g., `SUM()`, `AVG()`, `GROUP BY`).
+- **Data Manipulation**: Using SQL functions to aggregate data, calculate totals, derive metrics (e.g., `SUM()`, `AVG()`, `GROUP BY`), And using Advanced SQL like subqueries and CTEs to reduce the time takesn to retrive the data.
 - **Joins**: Using `JOIN` statements to combine data from multiple tables for deeper analysis.
 - **Stored Procedures/Functions**: Writing procedures or functions to automate repetitive tasks or complex calculations.
 
@@ -86,6 +86,7 @@ The dataset, obtained from the [here](https://www.kaggle.com/c/walmart-recruitin
 10. Which branch sold more products than the average?
 11. What is the most common product line by gender?
 12. What is the average rating for each product line?
+13. Which product line has the highest customer rating on average, considering only those with at least 10 sales?
 - [Products](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Products.sql)
 
 ## Dashboard Preview
@@ -147,6 +148,7 @@ By aligning strategies with these insights, you can effectively boost the quanti
 7. At what time do customers give the highest ratings?
 8. Which day of the week has the best average ratings?
 9. Which day of the week has the highest ratings per branch?
+10. How many sales were made on the best days for good ratings?
 - [Customers](https://github.com/Ak-AlphaData/SQL-Projects/blob/main/Walmart%20Sales%20Data%20Analysis/Customers.sql)
 
 ## Dashboard Preview
