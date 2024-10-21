@@ -23,6 +23,7 @@ The repository is organized into several project folders, each containing the fo
 │   ├── WalmartSalesData_Analysed.sql  
 │   ├── WalmartSalesData.csv (Datasets)  
 
+---
 
 ## Project 1: Walmart Sales Data Analysis  
 
@@ -30,7 +31,7 @@ The repository is organized into several project folders, each containing the fo
 Analyze Walmart’s sales data to identify trends and optimize strategies.  
 
 ### Dataset:  
-Kaggle Walmart Sales Dataset  
+`Walmart Sales Dataset.csv`
 
 ### Key Steps:  
 - **Data Cleaning**: Removed duplicates and handled missing values.  
@@ -38,7 +39,6 @@ Kaggle Walmart Sales Dataset
 - **SQL Queries**: Extracted insights on product performance, sales trends, and customer behavior.  
 
 ### Example Query:  
-```sql
 SELECT MONTH(Date) AS Month, SUM(Sales) AS TotalSales  
 FROM Walmart_Sales  
 GROUP BY MONTH(Date);  
@@ -52,12 +52,14 @@ GROUP BY MONTH(Date);
 - Electronic accessories are consistently top-selling items.
 
 ### Report File:
-Report [Walmart_Sales_Analysis.xlsx](https://github.com/Ak-AlphaData/SQL-Projects/tree/main/Walmart%20Sales%20Data%20Analysis)
+Report [Walmart_Sales_Analysis(.xlsx)](https://github.com/Ak-AlphaData/SQL-Projects/tree/main/Walmart%20Sales%20Data%20Analysis)
 
 ### Technologies Used:
 - **SQL**: For data querying and analysis.
 - **Database Management Systems**: Such as MySQL Wrobench
 - **Data Visualization Tools**: Excel, Power BI
+
+----
 
 ## Conclusion
 
